@@ -113,13 +113,13 @@ func main() {
 	if conf.Domain == "" || conf.PublicIP == "" {
 		fmt.Println("Error: Must supply a domain and public IP in config file")
 		return
+	} else {
+		"Listener starting!"
 	}
 
 	dns.HandleFunc(".", handleInteraction)
 	if err := dns.ListenAndServe(conf.PublicIP+":53", "udp", nil); err != nil {
 		fmt.Println(err.Error())
 		return
-	} else {
-		fmt.Println("Started Listening!")
 	}
 }
