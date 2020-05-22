@@ -114,7 +114,7 @@ func main() {
 		fmt.Println("Error: Must supply a domain and public IP in config file")
 		return
 	} else {
-		"Listener starting!"
+		fmt.Println("Listener starting!")
 	}
 
 	dns.HandleFunc(".", handleInteraction)
