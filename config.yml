@@ -1,0 +1,5 @@
+a_records:
+  - hostname: "google.com"
+    ip: "1.2.3.4"
+  - hostname: "github.com"
+    ip: "5.6.7.8"
