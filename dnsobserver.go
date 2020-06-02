@@ -45,7 +45,7 @@ func handleInteraction(w dns.ResponseWriter, r *dns.Msg) {
 	q1 := r.Question[0]
 	t := time.Now()
 
-	if dns.IsSubDomain(q1.Name, conf.Domain+".") && q1.Name != "ns1."+conf.Domain+"." && q1.Name != "ns2."+conf.Domain+"." {
+	if dns.IsSubDomain(conf.Domain+".", q1.Name) && q1.Name != "ns1."+conf.Domain+"." && q1.Name != "ns2."+conf.Domain+"." {
 		addrParts := strings.Split(remoteAddr, ":")
 		dateString := "Received at: " + "`" + t.Format("January 2, 2006 3:04 PM") + "`"
 		fromString := "Received From: " + "`" + addrParts[0] + "`"
